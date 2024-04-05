@@ -61,12 +61,12 @@ def test_get_members_returns_list_of_five(client):
 
 @pytest.mark.it("Method GET /member/<int:id> should exist")
 def test_get_single_member_implemented(client):
-    response = client.get('/member/3443')
+    response = client.get('/member/1')
     assert response.status_code == 200
 
 @pytest.mark.it("Method GET /member/<int:id> should return a one single family member in a dictionary format")
 def test_get_single_member_returns_dict(client):
-    response = client.get('/member/3443')
+    response = client.get('/member/1')
     data = json.loads(response.data)
     assert data is not None
     assert isinstance(data, dict)
